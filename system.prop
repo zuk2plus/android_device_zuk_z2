@@ -16,8 +16,11 @@ persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
-# Start in global mode
-ro.telephony.default_network=10
+
+persist.radio.multisim.config=dsds
+persist.volte_enalbed_by_hw=1
+persist.radio.data_ltd_sys_ind=1
+ro.telephony.default_network=22,22
 
 debug.sf.hw=1
 debug.egl.hw=1
@@ -110,11 +113,11 @@ persist.fuse_sdcard=true
 qcom.bluetooth.soc=rome
 
 #system prop for wipower support
-#ro.bluetooth.wipower=true
+ro.bluetooth.wipower=true
 
 #Set this true as ROME which is programmed
 #as embedded wipower mode by deafult
-#ro.bluetooth.emb_wp_mode=true
+ro.bluetooth.emb_wp_mode=true
 
 #
 #snapdragon value add features
@@ -239,55 +242,26 @@ persist.radio.process_sups_ind=1
 persist.radio.multisim.config=dsds
 #[End][public][PLAT-127][modem][mbn][wangxg7][20160121] Enable mbn & VoLTE & VT & dsds property
 
-persist.volte_enalbed_by_hw=1
-ro.telephony.call_ring.multiple=false
-persist.radio.ignore_dom_time=5
-persist.radio.start_ota_daemon=1
-
 #enable flex mapping
 persist.radio.primarycard=true
 persist.radio.flexmap_type=dds
 
-#liujb2 add
 persist.dpm.feature=3
 persist.radio.add_power_save=1
 
-#wangwb4 add
 persist.radio.rat_on=combine
 
-#liufeng23 add for mms apn restore delay
+#add for mms apn restore delay
 android.telephony.apn-restore=240000
 
-#liuhj7 add for roaming vendor property
+#add for roaming vendor property
 ro.roaming.vendor=redtea
 
-#luoqy3 add for fix bug
-ro.zuk.product.market=ZUK Z2
+#add for leds
+persist.sys.leds.enabled=false
 
-#tianyn add for leds
-#persist.sys.leds.enabled=false
+ro.vendor.extension_library=libqti-perfd-client.so
 
-#wangyh31 add no display text for stk
-persist.radio.nodisplaytext=true
-
-#liufeng23 add for CMCC FT UE did not camp on IMS after TDS moving to LTE.
-#persist.radio.apn_ff_delay=20000
-
-#zhourb1 doesn't show pdaf focus rectangle
-#persist.camera.stats.test=5
-
-#persist.lcd.saturation=0
-#persist.lcd.temperature=1
-#persist.lcd.careeyes=0
-#persist.lcd.cabccustom=1
-#persist.lcd.cabcinternal=0
-#persist.lcd.sunlight=0
-#persist.lcd.autosunlight=0
-#persist.lcd.imageenhance=1
-#persist.lcd.ppmode=0
-persist.radio.data_ltd_sys_ind=1
-persist.sys.ssr.enable_ramdumps=0
-ro.carrier=unknown
 persist.radio.apm_sim_not_pwdn=1
 persist.radio.sib16_support=1
 persist.radio.custom_ecc=1
