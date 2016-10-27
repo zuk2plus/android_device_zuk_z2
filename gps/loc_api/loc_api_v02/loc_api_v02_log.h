@@ -1,4 +1,4 @@
-/* Copyright (c) 2014 The Linux Foundation. All rights reserved.
+/* Copyright (c) 2011, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -9,7 +9,7 @@
  *       copyright notice, this list of conditions and the following
  *       disclaimer in the documentation and/or other materials provided
  *       with the distribution.
- *     * Neither the name of The Linux Foundation, nor the names of its
+ *     * Neither the name of The Linux Foundation nor the names of its
  *       contributors may be used to endorse or promote products derived
  *       from this software without specific prior written permission.
  *
@@ -27,44 +27,24 @@
  *
  */
 
-#ifndef LOC_ADAPTER_PROXY_BASE_H
-#define LOC_ADAPTER_PROXY_BASE_H
+#ifndef LOC_API_V02_LOG_H
+#define LOC_API_V02_LOG_H
 
-#include <ContextBase.h>
-#include <gps_extended.h>
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 
-namespace loc_core {
+#include <loc_log.h>
+#include <loc_api_v02_client.h>
 
-class LocAdapterProxyBase {
-private:
-    LocAdapterBase *mLocAdapterBase;
-protected:
-    inline LocAdapterProxyBase(const LOC_API_ADAPTER_EVENT_MASK_T mask,
-                   ContextBase* context):
-                   mLocAdapterBase(new LocAdapterBase(mask, context, this)) {
-    }
-    inline virtual ~LocAdapterProxyBase() {
-        delete mLocAdapterBase;
-    }
-    inline void updateEvtMask(LOC_API_ADAPTER_EVENT_MASK_T event,
-                              loc_registration_mask_status isEnabled) {
-        mLocAdapterBase->updateEvtMask(event,isEnabled);
-    }
+const char* loc_get_v02_event_name(uint32_t event);
+const char* loc_get_v02_client_status_name(locClientStatusEnumType status);
+const char* loc_get_v02_qmi_status_name(qmiLocStatusEnumT_v02 status);
 
-public:
-    inline ContextBase* getContext() const {
-        return mLocAdapterBase->getContext();
-    }
-    inline virtual void handleEngineUpEvent() {};
-    inline virtual void handleEngineDownEvent() {};
-    inline virtual bool reportPosition(UlpLocation &location,
-                                       GpsLocationExtended &locationExtended,
-                                       enum loc_sess_status status,
-                                       LocPosTechMask loc_technology_mask) {
-        return false;
-    }
-};
 
-} // namespace loc_core
+#ifdef __cplusplus
+}
+#endif
 
-#endif //LOC_ADAPTER_PROXY_BASE_H
+#endif /* LOC_API_V02_LOG_H */
