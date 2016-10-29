@@ -107,6 +107,7 @@ QCOM_BT_USE_SMD_TTY := true
 # Camera
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 USE_DEVICE_SPECIFIC_CAMERA := true
+TARGET_CAMERA_APP := Camera2
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -127,6 +128,7 @@ BOARD_USES_QCNE := true
 TARGET_HW_DISK_ENCRYPTION := true
 
 # Display
+BOARD_USES_ADRENO := true
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
@@ -137,6 +139,18 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
+SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
+#TARGET_USES_HWC2 := true
+
+# Enable dexpreopt to speed boot time
+ifeq ($(HOST_OS),linux)
+  ifeq ($(call match-word-in-list,$(TARGET_BUILD_VARIANT),user),true)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
 
 # GPS
 TARGET_NO_RPC := true
@@ -167,6 +181,10 @@ TARGET_RIL_VARIANT := caf
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_UI_LIB := librecovery_ui_msm
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
+TARGET_RELEASETOOLS_EXTENSIONS := device/qcom/common
+BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
@@ -177,6 +195,9 @@ BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true
+
+# Timeservice
+BOARD_USES_QC_TIME_SERVICES := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
@@ -193,9 +214,6 @@ WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME := "wlan"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-
-# Timeservice
-BOARD_USES_QC_TIME_SERVICES := true
 
 # inherit from the proprietary version
 -include vendor/zuk/z2/BoardConfigVendor.mk
