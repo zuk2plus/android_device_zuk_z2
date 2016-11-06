@@ -280,6 +280,8 @@ ro.min_freq_0=307200
 ro.min_freq_4=307200
 ro.sys.fw.bg_apps_limit=60
 
+media.stagefright.legacyencoder=true
+
 # Camera
 persist.camera.imglib.fddsp=1
 persist.camera.llc=1
