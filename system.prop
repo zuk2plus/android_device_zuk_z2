@@ -219,6 +219,10 @@ ro.dbg.coresight.config=stm_events
 #property to enable fingerprint
 persist.qfp=false
 
+# HAX - remove ASAP
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
+
 #default pd_enable value
 persist.sys.pd_enable=0
 #Disable rotator split feature
