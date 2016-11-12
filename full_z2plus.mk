@@ -14,14 +14,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from oneplus3 device
+# Inherit from z2plus device
 $(call inherit-product, device/zuk/z2/device.mk)
 
 PRODUCT_NAME := full_z2plus
-PRODUCT_DEVICE := z2
+PRODUCT_DEVICE := z2plus
 PRODUCT_MANUFACTURER := ZUK
 PRODUCT_BRAND := ZUK
-PRODUCT_MODEL := Z2
+PRODUCT_MODEL := Z2 Plus
 
 PRODUCT_GMS_CLIENTID_BASE := android-zuk
 
@@ -30,7 +30,6 @@ TARGET_VENDOR := zuk
 PRODUCT_PACKAGES += \
 Launcher3
 
-TARGET_VENDOR_PRODUCT_NAME := z2
-TARGET_VENDOR_DEVICE_NAME := z2
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=z2 PRODUCT_NAME=z2
-
+TARGET_VENDOR_PRODUCT_NAME := z2plus
+TARGET_VENDOR_DEVICE_NAME := z2plus
+PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=z2plus PRODUCT_NAME=z2plus

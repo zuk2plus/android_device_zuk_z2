@@ -153,19 +153,21 @@ SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 #TARGET_USES_HWC2 := true
 
 # Enable dexpreopt to speed boot time
-#ifeq ($(HOST_OS),linux)
-#  ifeq ($(call match-word-in-list,$(TARGET_BUILD_VARIANT),user),true)
-#    ifeq ($(WITH_DEXPREOPT),)
-#      WITH_DEXPREOPT := true
-#    endif
-#  endif
-#endif
+ifeq ($(HOST_OS),linux)
+  ifeq ($(call match-word-in-list,$(TARGET_BUILD_VARIANT),user),true)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
 
 # GPS
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
 
 # Init
+TARGET_INIT_VENDOR_LIB := libinit_z2_plus
+TARGET_RECOVERY_DEVICE_MODULES := libinit_z2_plus
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
 # Keystore
