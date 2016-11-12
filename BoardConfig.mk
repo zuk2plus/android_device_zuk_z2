@@ -21,13 +21,16 @@
 # Boldly go.
 USE_CLANG_PLATFORM_BUILD := true
 
-TARGET_OTA_ASSERT_DEVICE := z2,Z2,z2plus,z2_plus
+TARGET_OTA_ASSERT_DEVICE := z2,Z2,z2plus,z2_plus,z2121
 
 PLATFORM_PATH := device/zuk/z2
 
 TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
 BOARD_VENDOR := zuk
+
+# Use Snapdragon LLVM, if available
+TARGET_USE_SDCLANG := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8996
