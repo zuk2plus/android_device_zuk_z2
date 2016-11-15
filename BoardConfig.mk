@@ -23,7 +23,7 @@ USE_CLANG_PLATFORM_BUILD := true
 
 TARGET_OTA_ASSERT_DEVICE := z2,Z2,z2plus,z2_plus
 
-PLATFORM_PATH := device/zuk/z2
+PLATFORM_PATH := device/zuk/z2plus
 
 TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
@@ -215,4 +215,4 @@ WIFI_DRIVER_MODULE_NAME := "wlan"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # inherit from the proprietary version
--include vendor/zuk/z2/BoardConfigVendor.mk
+-include vendor/zuk/z2plus/BoardConfigVendor.mk

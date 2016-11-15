@@ -22,9 +22,9 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),z2)
+ifeq ($(TARGET_DEVICE),z2plus)
 
-include device/zuk/z2/symlinks.mk
+include device/zuk/z2plus/symlinks.mk
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
