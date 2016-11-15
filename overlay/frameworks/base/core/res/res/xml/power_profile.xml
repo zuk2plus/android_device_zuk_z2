@@ -112,8 +112,14 @@
         <value>530</value> <!-- 2073.6 MHz CPU speed -->
         <value>610</value> <!-- 2150.4 MHz CPU speed -->
     </array>
-
-    <!-- This is the battery capacity in mAh -->
-    <item name="battery.capacity">3000</item>
-
+    <item name="cpu.idle">4.1</item>
+    <item name="cpu.awake">16</item>
+    <item name="battery.capacity">3500</item>
+    <array name="wifi.batchedscan">
+        <value>.0002</value>
+        <value>.002</value>
+        <value>.02</value>
+        <value>.2</value>
+        <value>2</value>
+    </array>
 </device>

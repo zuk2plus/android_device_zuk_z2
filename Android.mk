@@ -1,6 +1,3 @@
-#
-# Copyright (C) 2016 The CyanogenMod Project
-#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -26,6 +23,8 @@
 LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_DEVICE),z2plus)
+
+include device/zuk/z2plus/symlinks.mk
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

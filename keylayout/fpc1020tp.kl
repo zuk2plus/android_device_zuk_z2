@@ -1,5 +1,10 @@
 key 158   BACK           VIRTUAL
+<<<<<<< HEAD
 key 249   MENU
 key 254   APP_SWITCH
+=======
+key 249   APP_SWITCH
+key 254   MENU
+>>>>>>> 483f4c77666955cc0675c03d6ec806c72bb26303
 key 183   HOME     VIRTUAL
 

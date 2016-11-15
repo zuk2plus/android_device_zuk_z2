@@ -18,7 +18,7 @@
 # definition file).
 #
 
-$(call inherit-product-if-exists, vendor/zuk/z2/z2-vendor.mk)
+$(call inherit-product-if-exists, vendor/zuk/z2plus/z2plus-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -129,14 +129,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     Camera2 \
     libcamera_shim
-
-# Gestures
-#PRODUCT_PACKAGES += \
-#    com.cyanogenmod.keyhandler
-
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
@@ -269,7 +261,6 @@ PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
     libwpa_client \
     hostapd \
-    dhcpcd.conf \
     wpa_supplicant \
     wpa_supplicant.conf
 
@@ -284,3 +275,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/qca_cld/WCNSS_cfg.dat
+

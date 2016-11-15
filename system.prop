@@ -289,4 +289,3 @@ camera.hal1.packagelist=com.skype.raider,com.whatsapp,com.tencent.mm,com.google.
 # HAX - remove ASAP
 media.stagefright.legacyencoder=true
 media.stagefright.less-secure=true
-

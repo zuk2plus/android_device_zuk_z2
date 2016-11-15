@@ -14,8 +14,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from z2plus device
-$(call inherit-product, device/zuk/z2/device.mk)
+# Inherit from oneplus3 device
+$(call inherit-product, device/zuk/z2plus/device.mk)
 
 PRODUCT_NAME := full_z2plus
 PRODUCT_DEVICE := z2plus
