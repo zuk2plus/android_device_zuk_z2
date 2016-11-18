@@ -43,6 +43,9 @@ ro.panel.mountflip=3
 #ro.hdmi.enable=true
 persist.speaker.prot.enable=true
 qcom.hw.aac.encoder=true
+
+persist.android.strictmode=0
+
 #
 # system props for the cne module
 #
@@ -290,3 +293,4 @@ media.stagefright.legacyencoder=true
 persist.camera.imglib.fddsp=1
 persist.camera.llc=1
 persist.camera.llnoise=1
+#persist.camera.stats.test=0
