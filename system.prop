@@ -274,6 +274,7 @@ persist.radio.sib16_support=1
 persist.radio.custom_ecc=1
 audio_hal.period_size=192
 
+# GPS
 persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.location
 ro.gps.agps_provider=1
