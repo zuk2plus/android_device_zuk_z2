@@ -22,30 +22,18 @@ persist.volte_enalbed_by_hw=1
 persist.radio.data_ltd_sys_ind=1
 ro.telephony.default_network=22,22
 
+#Flip panel
+persist.panel.inversemounted=1
+ro.panel.mountflip=3
 debug.sf.hw=1
 debug.egl.hw=1
 debug.gralloc.enable_fb_ubwc=1
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
-#######################################
-# Compatible with old qcom base line.
-persist.panel.inversemounted=1
-#######################################
-# Compatible with qcom c2 base line.
-# Defined in [DisplayDevice.cpp]
-# 1: H-Flip, 2: V-Flip, 3: 180 (HV Flip)
-# Qcom Relevant files:
-# [services/surfaceflinger/DisplayDevice.cpp]
-# [services/surfaceflinger/DisplayDevice.h]
-# [services/surfaceflinger/SurfaceFlinger.cpp]
-ro.panel.mountflip=3
 
 #ro.hdmi.enable=true
 persist.speaker.prot.enable=true
 qcom.hw.aac.encoder=true
-
-persist.android.strictmode=0
-
 #
 # system props for the cne module
 #
@@ -222,10 +210,6 @@ ro.dbg.coresight.config=stm_events
 #property to enable fingerprint
 persist.qfp=false
 
-# HAX - remove ASAP
-media.stagefright.legacyencoder=true
-media.stagefright.less-secure=true
-
 #default pd_enable value
 persist.sys.pd_enable=0
 #Disable rotator split feature
@@ -274,7 +258,6 @@ persist.radio.sib16_support=1
 persist.radio.custom_ecc=1
 audio_hal.period_size=192
 
-# GPS
 persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.location
 ro.gps.agps_provider=1
@@ -294,4 +277,5 @@ media.stagefright.legacyencoder=true
 persist.camera.imglib.fddsp=1
 persist.camera.llc=1
 persist.camera.llnoise=1
-#persist.camera.stats.test=0
+persist.camera.stats.test=0
+

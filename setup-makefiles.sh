@@ -18,7 +18,7 @@
 set -e
 
 # Required!
-DEVICE=z2plus
+DEVICE=z2_plus
 VENDOR=zuk
 
 # Load extractutils and do some sanity checks
